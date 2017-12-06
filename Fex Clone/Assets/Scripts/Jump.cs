@@ -20,13 +20,13 @@ public class Jump : MonoBehaviour {
 		}
 	}
 
-	void onCollisionStay(Collision2D collision){
+	void onCollisionStay(BoxCollider2D collision){
 		if (collision.gameObject.tag == "Ground") {
 			grounded = true;
 		}
 	}
 
-	void onCollisionExit(Collision2D collision){
+	void onCollisionExit(BoxCollider2D collision){
 		if(collision.gameObject.tag == "Ground"){
 			grounded = false;
 		}
