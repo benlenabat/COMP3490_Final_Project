@@ -14,7 +14,8 @@ public class CamRotation : MonoBehaviour {
 
 		if (Input.GetKeyUp ("a")) {
 			transform.RotateAround(Vector3.zero, Vector3.up, -90);
-		}
+
+        }
 
 		//transform.RotateAround(Vector3.zero, Vector3.up, 20 * Time.deltaTime);
 	}
