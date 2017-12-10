@@ -284,7 +284,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 528970120}
   m_LocalRotation: {x: 0.2863139, y: 0.25428164, z: -0.07910212, w: 0.92038476}
-  m_LocalPosition: {x: 6.4, y: 2.95, z: 2.04}
+  m_LocalPosition: {x: 5.56, y: 0.58, z: 0.64}
   m_LocalScale: {x: 2.4026027, y: 1.7825526, z: 2.3307936}
   m_Children: []
   m_Father: {fileID: 0}
@@ -408,6 +408,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  leftK: {x: 0, y: 0, z: 0}
+  rightK: {x: 0, y: 0, z: 0}
+  view: 
 --- !u!114 &749817279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,7 +506,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1216275405}
   m_LocalRotation: {x: 0.2956534, y: 0.12781405, z: 0.03662826, w: 0.94599736}
-  m_LocalPosition: {x: -3.9, y: 2.81, z: -2.72}
+  m_LocalPosition: {x: -3.25, y: 2.72, z: 0.05}
   m_LocalScale: {x: 1.6645548, y: 1.4698116, z: 2.1901395}
   m_Children: []
   m_Father: {fileID: 0}
@@ -615,7 +618,7 @@ GameObject:
   - component: {fileID: 1958579319}
   - component: {fileID: 1958579318}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
