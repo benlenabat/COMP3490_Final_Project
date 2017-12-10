@@ -55,12 +55,12 @@ public class Movement : MonoBehaviour {
 		if (Input.GetKey ("right")) {
 			gameObject.transform.Translate (rightK * speed * Time.deltaTime);
 		}
-        if (Input.GetKeyUp("d"))
+        if (Input.GetKeyUp("d")) //shifting camera counter-clockwise
         {
-            if (view == "front")
+            if (view == "front") //check view
             {
-                view = "right";
-                rightSide();
+                view = "right"; //changes view
+                rightSide(); //sets controls
             }
             else if(view == "right")
             {
@@ -78,7 +78,7 @@ public class Movement : MonoBehaviour {
                 frontSide();
             }
         }
-        else if (Input.GetKeyUp("a"))
+        else if (Input.GetKeyUp("a")) //shifting camera clock-wise
         {
             if (view == "front")
             {
