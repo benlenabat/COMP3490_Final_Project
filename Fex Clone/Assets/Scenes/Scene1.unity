@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 296532912}
   - component: {fileID: 296532911}
   - component: {fileID: 296532910}
+  - component: {fileID: 296532914}
   m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Ground
@@ -224,6 +225,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &296532914
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296532909}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &297716480
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +251,7 @@ GameObject:
   - component: {fileID: 297716483}
   - component: {fileID: 297716482}
   - component: {fileID: 297716481}
+  - component: {fileID: 297716485}
   m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Ground
@@ -308,6 +325,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &297716485
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 297716480}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &378316121
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +416,7 @@ GameObject:
   - component: {fileID: 601965250}
   - component: {fileID: 601965249}
   - component: {fileID: 601965248}
+  - component: {fileID: 601965252}
   m_Layer: 8
   m_Name: Cube
   m_TagString: Ground
@@ -457,6 +490,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &601965252
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 601965247}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &749817273
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,6 +654,7 @@ GameObject:
   - component: {fileID: 1241858234}
   - component: {fileID: 1241858233}
   - component: {fileID: 1241858232}
+  - component: {fileID: 1241858236}
   m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Ground
@@ -679,6 +728,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1241858236
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1241858231}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1383022399
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,7 +847,6 @@ GameObject:
   - component: {fileID: 1958579316}
   - component: {fileID: 1958579315}
   - component: {fileID: 1958579319}
-  - component: {fileID: 1958579318}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -857,20 +920,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1958579318
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1958579313}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &1958579319
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -897,6 +946,7 @@ GameObject:
   - component: {fileID: 2003988702}
   - component: {fileID: 2003988701}
   - component: {fileID: 2003988700}
+  - component: {fileID: 2003988704}
   m_Layer: 8
   m_Name: Cube (4)
   m_TagString: Ground
@@ -970,3 +1020,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2003988704
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2003988699}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
