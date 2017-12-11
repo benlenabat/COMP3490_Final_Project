@@ -5,28 +5,25 @@ using UnityEngine;
 public class Jump : MonoBehaviour {
 
 	public float jumpForce;
-	private Rigidbody2D rigidBody;
 
-	public Transform groundCheck;
-	public float groundCheckRadius;
-	public LayerMask whatIsGround;
-	private bool grounded;
+	public bool isGrounded;
+	private Rigidbody rb;
 
-
-	// Use this for initialization
-	void Start () {
-		rigidBody = gameObject.GetComponent<Rigidbody2D> ();
+	void Start(){
+		rb = GetComponent<Rigidbody>();
 	}
 
-	void FixedUpdate() {
-		grounded = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, whatIsGround);
+	void OnCollisionStay()
+	{
+		isGrounded = true;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown ("space") && grounded) {
-			rigidBody.AddForce (Vector3.up * jumpForce, ForceMode2D.Impulse);
+
+	void Update(){
+		if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
+
+			rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+			isGrounded = false;
 		}
 	}
-		
+
 }
