@@ -18,39 +18,33 @@ public class Movement : MonoBehaviour {
 
 	public Rigidbody rb;
 
-    void Start () {
-        leftK = Vector3.left;
-        rightK = Vector3.right;
-        view = "front";
+	void Start () {
+		leftK = Vector3.left;
+		rightK = Vector3.right;
+		view = "front";
 
 		rb = GetComponent<Rigidbody> ();
 		rb.freezeRotation = true;
 	}
 
-    public void frontSide() //when camera changes to the default front view
-    {
-        leftK = Vector3.left;
-        rightK = Vector3.right;
-    }
+	public void frontSide() //when camera changes to the default front view
+	{
+		leftK = Vector3.left;
+		rightK = Vector3.right;
+	}
 
-    public void backSide() //when camera changes to back view
-    {
-        leftK = Vector3.right;
-        rightK = Vector3.left;
-    }
+	public void backSide() //when camera changes to back view
+	{
+		leftK = Vector3.right;
+		rightK = Vector3.left;
+	}
 
-    public void leftSide() //when camera changes to left view
-    {
-        leftK = Vector3.forward;
-        rightK = Vector3.back;
-    }
+	public void leftSide() //when camera changes to left view
+	{
+		leftK = Vector3.forward;
+		rightK = Vector3.back;
+	}
 
-    public void rightSide() //when camera changes to right view
-    {
-        leftK = Vector3.back;
-        rightK = Vector3.forward;
-    }
-	
 	// Update is called once per frame
 	//interwebs told me to use FixedUpdate for working with physics vs Update but we can prolly move it back
 	/*
@@ -58,6 +52,7 @@ public class Movement : MonoBehaviour {
 		
 	}
 	*/
+
 	void FixedUpdate(){
 		if (Input.GetKey ("left")) {
 			gameObject.transform.Translate (leftK * speed * Time.deltaTime);
@@ -65,66 +60,52 @@ public class Movement : MonoBehaviour {
 		if (Input.GetKey ("right")) {
 			gameObject.transform.Translate (rightK * speed * Time.deltaTime);
 		}
-        if (Input.GetKeyUp("d")) //shifting camera counter-clockwise
-        {
-            rotation -= 90;
-            qTo = Quaternion.Euler(0, rotation, 0);
+		if (Input.GetKeyUp("d")) //shifting camera counter-clockwise
+		{
+			rotation -= 90;
+			qTo = Quaternion.Euler(0, rotation, 0);
 
-            //transform.Rotate(Vector3.up * -90, Space.World);
+			if (view == "front") //check view
+			{
+				view = "right"; //changes view
+			}
+			else if(view == "right")
+			{
+				view = "back";
+			}
+			else if(view == "back")
+			{
+				view = "left";
+			}
+			else if(view == "left")
+			{
+				view = "front";
+			}
 
-            /*
-            if (view == "front") //check view
-            {
-                view = "right"; //changes view
-                rightSide(); //sets controls
-            }
-            else if(view == "right")
-            {
-                view = "back";
-                backSide();
-            }
-            else if(view == "back")
-            {
-                view = "left";
-                leftSide();
-            }
-            else if(view == "left")
-            {
-                view = "front";
-                frontSide();
-            }
-            */
-        }
-        else if (Input.GetKeyUp("a")) //shifting camera clock-wise
-        {
-            rotation += 90;
-            qTo = Quaternion.Euler(0, rotation, 0);
+		}
+		else if (Input.GetKeyUp("a")) //shifting camera clock-wise
+		{
+			rotation += 90;
+			qTo = Quaternion.Euler(0, rotation, 0);
 
-            //transform.Rotate(Vector3.up * 90, Space.World);
-            /*
-            if (view == "front")
-            {
-                view = "left";
-                leftSide();
-            }
-            else if (view == "left")
-            {
-                view = "back";
-                backSide();
-            }
-            else if (view == "back")
-            {
-                view = "right";
-                rightSide();
-            }
-            else if (view == "right")
-            {
-                view = "front";
-                frontSide();
-            }
-            */
-        }
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, speedR * Time.deltaTime);
-    }
+			if (view == "front")
+			{
+				view = "left";
+			}
+			else if (view == "left")
+			{
+				view = "back";
+			}
+			else if (view == "back")
+			{
+				view = "right";
+			}
+			else if (view == "right")
+			{
+				view = "front";
+			}
+		}
+		transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, speedR * Time.deltaTime);
+	}
 
 }
