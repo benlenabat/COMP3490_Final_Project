@@ -57,6 +57,8 @@ public class Movement : MonoBehaviour {
 		}
         if (Input.GetKeyUp("d")) //shifting camera counter-clockwise
         {
+            transform.Rotate(Vector3.up * -90, Space.World);
+            /*
             if (view == "front") //check view
             {
                 view = "right"; //changes view
@@ -77,9 +79,12 @@ public class Movement : MonoBehaviour {
                 view = "front";
                 frontSide();
             }
+            */
         }
         else if (Input.GetKeyUp("a")) //shifting camera clock-wise
         {
+            transform.Rotate(Vector3.up * 90, Space.World);
+            /*
             if (view == "front")
             {
                 view = "left";
@@ -100,6 +105,7 @@ public class Movement : MonoBehaviour {
                 view = "front";
                 frontSide();
             }
+            */
         }
     }
 
