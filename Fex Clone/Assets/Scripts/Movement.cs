@@ -10,8 +10,13 @@ public class Movement : MonoBehaviour {
     public Vector3 leftK; //variable to holdm direction change for left arrow key
     public Vector3 rightK; //variable to hold direction change for right arrow key
     public string view;
+    //-------------------------------------
+    private float rotation = 0.0f;
+    private float speedR = 250;
+    private Quaternion qTo = Quaternion.identity;
+    //-------------------------------------
 
-	void Start () {
+    void Start () {
         leftK = Vector3.left;
         rightK = Vector3.right;
         view = "front";
@@ -57,7 +62,11 @@ public class Movement : MonoBehaviour {
 		}
         if (Input.GetKeyUp("d")) //shifting camera counter-clockwise
         {
-            transform.Rotate(Vector3.up * -90, Space.World);
+            rotation -= 90;
+            qTo = Quaternion.Euler(0, rotation, 0);
+
+            //transform.Rotate(Vector3.up * -90, Space.World);
+
             /*
             if (view == "front") //check view
             {
@@ -83,7 +92,10 @@ public class Movement : MonoBehaviour {
         }
         else if (Input.GetKeyUp("a")) //shifting camera clock-wise
         {
-            transform.Rotate(Vector3.up * 90, Space.World);
+            rotation += 90;
+            qTo = Quaternion.Euler(0, rotation, 0);
+
+            //transform.Rotate(Vector3.up * 90, Space.World);
             /*
             if (view == "front")
             {
@@ -107,6 +119,7 @@ public class Movement : MonoBehaviour {
             }
             */
         }
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, speedR * Time.deltaTime);
     }
 
 }
