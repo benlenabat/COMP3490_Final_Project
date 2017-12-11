@@ -16,10 +16,15 @@ public class Movement : MonoBehaviour {
     private Quaternion qTo = Quaternion.identity;
     //-------------------------------------
 
+	public Rigidbody rb;
+
     void Start () {
         leftK = Vector3.left;
         rightK = Vector3.right;
         view = "front";
+
+		rb = GetComponent<Rigidbody> ();
+		rb.freezeRotation = true;
 	}
 
     public void frontSide() //when camera changes to the default front view

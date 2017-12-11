@@ -627,6 +627,7 @@ MonoBehaviour:
   leftK: {x: 0, y: 0, z: 0}
   rightK: {x: 0, y: 0, z: 0}
   view: 
+  rb: {fileID: 0}
 --- !u!114 &749817279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,12 +639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb4a41015dbea843ba65eae524eb136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
-  groundCheck: {fileID: 283804705}
-  groundCheckRadius: 0.5
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 2048
+  jumpForce: 8
+  isGrounded: 0
 --- !u!114 &749817280
 MonoBehaviour:
   m_ObjectHideFlags: 0

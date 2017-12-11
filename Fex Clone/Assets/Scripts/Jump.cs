@@ -13,7 +13,7 @@ public class Jump : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 	}
 
-	void OnCollisionStay()
+	void OnCollisionEnter()
 	{
 		isGrounded = true;
 	}
