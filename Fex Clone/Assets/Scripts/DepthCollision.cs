@@ -7,7 +7,6 @@ public class DepthCollision : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        DepthCollider();
 	}
 	
 	// Update is called once per frame
@@ -15,7 +14,26 @@ public class DepthCollision : MonoBehaviour {
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Ray ray = new Ray(player.transform.position, Vector3.down * 100);
-	}
+        setPlayerPos();
+        DepthCollider();
+    }
+
+    public void setPlayerPos() //move player if the block moves from underneath him
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Ray ray = new Ray(player.transform.position, Vector3.down);
+        RaycastHit hit = new RaycastHit();
+        if (Physics.Raycast(ray, out hit, 100.0f))
+        {
+            GameObject platform = hit.collider.gameObject;
+            Vector3 colliderPos = ((BoxCollider)(hit.collider)).center;
+            Vector3 playerPos = platform.transform.InverseTransformPoint(player.transform.position);
+            Vector3 newPos = new Vector3(playerPos.x - colliderPos.x, playerPos.y, playerPos.z - colliderPos.z);
+            newPos = platform.transform.TransformPoint(newPos);
+
+            player.transform.position = newPos;
+        }
+    }
 
     void DepthCollider()
     {
@@ -24,8 +42,6 @@ public class DepthCollision : MonoBehaviour {
 
         for (int i = 0; i < groundObjects.Length; i++) //goes through the list of ground objects
         {
-            Debug.Log("test");
-
             GameObject ground = groundObjects[i]; //setting ground object to current platform
             BoxCollider collider = ground.GetComponentInChildren<BoxCollider>(); //new collider object
             collider.center = Vector3.zero; //default position
@@ -36,8 +52,17 @@ public class DepthCollision : MonoBehaviour {
 
             Vector3 newColliderPos;
 
-            //testing just for the z coordinate right now, aka the default camera view
-            newColliderPos = new Vector3(colliderPos.x, colliderPos.y, playerPos.z); //centers collider on z player position for forward and backward view
+            //move platform collider depending on what side the camera is facing 
+            GameObject player = GameObject.FindGameObjectWithTag("Player"); //gets player
+            float rotation = Mathf.Rad2Deg * player.transform.rotation.y; //get rotation to determine what angle we are looking at
+            if (Mathf.Abs(Mathf.Round(rotation)) == 41) //if looking from left or right
+            {
+                newColliderPos = new Vector3(playerPos.x, colliderPos.y, colliderPos.z);
+            }
+            else //if looking from front or back
+            {
+                newColliderPos = new Vector3(colliderPos.x, colliderPos.y, playerPos.z);
+            }
 
             newColliderPos = collider.transform.InverseTransformPoint(newColliderPos); //local space
 
