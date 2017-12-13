@@ -69,60 +69,11 @@ public class Movement : MonoBehaviour {
         {
             rotation -= 90;
             qTo = Quaternion.Euler(0, rotation, 0);
-
-            //transform.Rotate(Vector3.up * -90, Space.World);
-
-            /*
-            if (view == "front") //check view
-            {
-                view = "right"; //changes view
-                rightSide(); //sets controls
-            }
-            else if(view == "right")
-            {
-                view = "back";
-                backSide();
-            }
-            else if(view == "back")
-            {
-                view = "left";
-                leftSide();
-            }
-            else if(view == "left")
-            {
-                view = "front";
-                frontSide();
-            }
-            */
         }
         else if (Input.GetKeyUp("a")) //shifting camera clock-wise
         {
             rotation += 90;
             qTo = Quaternion.Euler(0, rotation, 0);
-
-            //transform.Rotate(Vector3.up * 90, Space.World);
-            /*
-            if (view == "front")
-            {
-                view = "left";
-                leftSide();
-            }
-            else if (view == "left")
-            {
-                view = "back";
-                backSide();
-            }
-            else if (view == "back")
-            {
-                view = "right";
-                rightSide();
-            }
-            else if (view == "right")
-            {
-                view = "front";
-                frontSide();
-            }
-            */
         }
         transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, speedR * Time.deltaTime);
     }
