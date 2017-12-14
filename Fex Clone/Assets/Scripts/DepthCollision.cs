@@ -14,8 +14,8 @@ public class DepthCollision : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Ray ray = new Ray(player.transform.position, Vector3.down * 100);
+        //GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //Ray ray = new Ray(player.transform.position, Vector3.down * 100);
         setPlayerPos();
         DepthCollider();
         fallCheck();
@@ -114,31 +114,9 @@ public class DepthCollision : MonoBehaviour {
                     newColliderPos = new Vector3(colliderPos.x, colliderPos.y, playerPos.z);
                     prizeCheck(player, false);
                 }
-
                 newColliderPos = collider.transform.InverseTransformPoint(newColliderPos); //local space
 
                 collider.center = newColliderPos; //set in world
-            }
-            else
-            {
-                GameObject player = GameObject.FindGameObjectWithTag("Player"); //gets player
-                float rotation = Mathf.Rad2Deg * player.transform.rotation.y; //get rotation to determine what angle we are looking at
-                if (Mathf.Abs(Mathf.Round(rotation)) == 41) //if looking from left or right
-                {
-                    //newColliderPos = new Vector3(playerPos.x, colliderPos.y, colliderPos.z);
-                    Vector3 Pos = ground.transform.position;
-                    Pos.x = player.transform.position.x;
-                    ground.transform.position = Pos;
-                    prizeCheck(player, true);
-                }
-                else //if looking from front or back
-                {
-                    //newColliderPos = new Vector3(colliderPos.x, colliderPos.y, playerPos.z);
-                    Vector3 Pos = ground.transform.position;
-                    Pos.z = player.transform.position.z;
-                    ground.transform.position = Pos;
-                    prizeCheck(player, true);
-                }
             }
         }
     }
