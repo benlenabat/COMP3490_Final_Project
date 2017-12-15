@@ -5,10 +5,12 @@ using UnityEngine;
 public class DepthCollision : MonoBehaviour {
 
     private int distance = 1;
-
+	private AudioSource prizeSound;
 	// Use this for initialization
 	void Start ()
     {
+		AudioSource[] audios = GetComponents<AudioSource> ();
+		prizeSound = audios [1];
 	}
 	
 	// Update is called once per frame
@@ -25,7 +27,9 @@ public class DepthCollision : MonoBehaviour {
     {
         GameObject prize = GameObject.FindGameObjectWithTag("Prize");
         GameObject[] assets = GameObject.FindGameObjectsWithTag("PrizeAsset");
+
         Destroy(prize);
+		prizeSound.Play ();
         for(int i = 0; i < assets.Length; i++)
         {
             Destroy(assets[i]);
