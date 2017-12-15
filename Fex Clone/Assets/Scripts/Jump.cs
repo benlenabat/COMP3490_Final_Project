@@ -30,5 +30,4 @@ public class Jump : MonoBehaviour {
 			anim.SetBool ("Ground", false);
 		}
 	}
-
 }

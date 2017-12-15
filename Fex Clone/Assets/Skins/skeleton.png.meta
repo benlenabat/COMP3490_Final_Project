@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 568391e4f86c4e84993a7bd4d6c6df02
-timeCreated: 1513205104
+timeCreated: 1513303631
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -46,11 +46,11 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 22
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -90,14 +90,10 @@ TextureImporter:
         width: 10
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -5, y: 7.5}
-        - {x: -5, y: -7.5}
-        - {x: 5, y: -7.5}
-        - {x: 5, y: 7.5}
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: skeleton_1
@@ -108,15 +104,10 @@ TextureImporter:
         width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -4.5, y: 8}
-        - {x: -4.5, y: -8}
-        - {x: 3.5, y: -8}
-        - {x: 4.5, y: -5}
-        - {x: 4.5, y: 8}
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: skeleton_2
@@ -127,15 +118,10 @@ TextureImporter:
         width: 10
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -5, y: 7.5}
-        - {x: -5, y: -7.5}
-        - {x: 4, y: -7.5}
-        - {x: 5, y: -5.5}
-        - {x: 5, y: 7.5}
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: skeleton_3
@@ -146,15 +132,10 @@ TextureImporter:
         width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -4.5, y: 8}
-        - {x: -4.5, y: -8}
-        - {x: 3.5, y: -8}
-        - {x: 4.5, y: -5}
-        - {x: 4.5, y: 8}
+      physicsShape: []
       tessellationDetail: 0
     outline: []
     physicsShape: []

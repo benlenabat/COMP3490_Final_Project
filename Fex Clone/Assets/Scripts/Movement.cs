@@ -15,11 +15,12 @@ public class Movement : MonoBehaviour {
     private Quaternion qTo = Quaternion.identity;
     //-------------------------------------
 
-	//-----Animation------
+
+	//--Animation
 
 	private Animator anim;
 
-	//-----Animation------
+	//--Animation
 
     private Rigidbody rg;
 
@@ -29,22 +30,20 @@ public class Movement : MonoBehaviour {
         rg = GetComponent<Rigidbody>();
         rg.freezeRotation = true;
 		anim = gameObject.GetComponent<Animator> ();
+
 	}
 
 	void FixedUpdate(){
-
 		if (Input.GetKey ("right")) {
 			gameObject.transform.Translate (rightK * speed * Time.deltaTime);
 			anim.SetFloat ("Speed", 0.2f);
 		} else {
-			anim.SetFloat("Speed", 0.0f);
+			anim.SetFloat ("Speed", 0.0f);
 		}
-
 		if (Input.GetKey ("left")) {
 			gameObject.transform.Translate (leftK * speed * Time.deltaTime);
 			anim.SetFloat ("Speed", 0.2f);
-		} 
-
+		}
 
         if (Input.GetKeyUp("d")) //shifting camera counter-clockwise
         {
