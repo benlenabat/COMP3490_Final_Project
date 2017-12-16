@@ -22,6 +22,10 @@ public class Movement : MonoBehaviour {
 
 	//--Animation
 
+	//--Sounds
+	private AudioSource woosh;
+
+
     private Rigidbody rg;
 
     void Start () {
@@ -30,6 +34,9 @@ public class Movement : MonoBehaviour {
         rg = GetComponent<Rigidbody>();
         rg.freezeRotation = true;
 		anim = gameObject.GetComponent<Animator> ();
+
+		AudioSource[] audios = GetComponents<AudioSource> ();
+		woosh = audios [2];
 
 	}
 
@@ -47,11 +54,13 @@ public class Movement : MonoBehaviour {
 
         if (Input.GetKeyUp("d")) //shifting camera counter-clockwise
         {
+			woosh.Play ();
             rotation -= 90;
             qTo = Quaternion.Euler(0, rotation, 0);
         }
         else if (Input.GetKeyUp("a")) //shifting camera clock-wise
         {
+			woosh.Play ();
             rotation += 90;
             qTo = Quaternion.Euler(0, rotation, 0);
         }
