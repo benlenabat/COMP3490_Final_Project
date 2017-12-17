@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ImageFlip.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DepthCollision.cs">
     <Files>
       <File FileName="Assets\Scripts\CamRotation.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Movement.cs" Line="29" Column="68" />
+      <File FileName="Assets\Scripts\Movement.cs" Line="39" Column="20" />
       <File FileName="Assets\Scripts\Jump.cs" Line="28" Column="1" />
-      <File FileName="Assets\ImageFlip.cs" Line="20" Column="20" />
-      <File FileName="Assets\Scripts\DepthCollision.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DepthCollision.cs" Line="13" Column="27" />
+      <File FileName="Assets\Scripts\TextureWrapManipulation.cs" Line="9" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
