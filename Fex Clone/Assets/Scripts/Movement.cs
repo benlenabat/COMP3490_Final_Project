@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour {
     //-------------------------------------
 	public GameObject[] oceans;
 	private bool[] oceanEnabled = new bool[]{false, false, false, true};
+	private int oceanIndex = 3;
 
 
 	//--Animation
@@ -40,8 +41,8 @@ public class Movement : MonoBehaviour {
 		AudioSource[] audios = GetComponents<AudioSource> ();
 		woosh = audios [2];
 
-		//oceans = GameObject.FindGameObjectsWithTag("Ocean");
-		//DisplayOcean (oceanEnabled);
+		oceans = GameObject.FindGameObjectsWithTag("Ocean");
+		DisplayOcean (oceanEnabled);
 
 	}
 
@@ -63,7 +64,7 @@ public class Movement : MonoBehaviour {
             rotation -= 90;
             qTo = Quaternion.Euler(0, rotation, 0);
 
-			//ToggleOcean (1);
+			ToggleOcean (1);
         }
         else if (Input.GetKeyUp("a")) //shifting camera clock-wise
         {
@@ -71,19 +72,17 @@ public class Movement : MonoBehaviour {
             rotation += 90;
             qTo = Quaternion.Euler(0, rotation, 0);
 
-			//ToggleOcean (-1);
+			ToggleOcean (-1);
         }
         transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, speedR * Time.deltaTime);
     }
 
 	private void ToggleOcean (int indexChange) {
-		for (int i=0; i<=3; i++) {
-			if (oceanEnabled[i] == true) {
-				oceanEnabled[i] = false;
-				int displayIndex = (i + 4 + indexChange) % 4;
-				oceanEnabled[displayIndex] = true;
-			}
-		}
+		oceanEnabled [oceanIndex] = false;
+
+		oceanIndex = (oceanIndex + 4 + indexChange) % 4;
+		oceanEnabled [oceanIndex] = true;
+
 		DisplayOcean (oceanEnabled);
 	} 
 
