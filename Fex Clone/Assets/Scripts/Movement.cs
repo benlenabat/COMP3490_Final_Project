@@ -14,6 +14,8 @@ public class Movement : MonoBehaviour {
     private float speedR = 250;
     private Quaternion qTo = Quaternion.identity;
     //-------------------------------------
+	public GameObject[] oceans;
+	private bool[] oceanEnabled = new bool[]{false, false, false, true};
 
 
 	//--Animation
@@ -38,6 +40,9 @@ public class Movement : MonoBehaviour {
 		AudioSource[] audios = GetComponents<AudioSource> ();
 		woosh = audios [2];
 
+		//oceans = GameObject.FindGameObjectsWithTag("Ocean");
+		//DisplayOcean (oceanEnabled);
+
 	}
 
 	void FixedUpdate(){
@@ -57,14 +62,36 @@ public class Movement : MonoBehaviour {
 			woosh.Play ();
             rotation -= 90;
             qTo = Quaternion.Euler(0, rotation, 0);
+
+			//ToggleOcean (1);
         }
         else if (Input.GetKeyUp("a")) //shifting camera clock-wise
         {
 			woosh.Play ();
             rotation += 90;
             qTo = Quaternion.Euler(0, rotation, 0);
+
+			//ToggleOcean (-1);
         }
         transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, speedR * Time.deltaTime);
     }
+
+	private void ToggleOcean (int indexChange) {
+		for (int i=0; i<=3; i++) {
+			if (oceanEnabled[i] == true) {
+				oceanEnabled[i] = false;
+				int displayIndex = (i + 4 + indexChange) % 4;
+				oceanEnabled[displayIndex] = true;
+			}
+		}
+		DisplayOcean (oceanEnabled);
+	} 
+
+	private void DisplayOcean (bool[] oceanEnabled) {
+		oceans [0].GetComponent<Renderer> ().enabled = oceanEnabled[0];
+		oceans [1].GetComponent<Renderer> ().enabled = oceanEnabled[1];
+		oceans [2].GetComponent<Renderer> ().enabled = oceanEnabled[2];
+		oceans [3].GetComponent<Renderer> ().enabled = oceanEnabled[3];
+	}
 
 }
