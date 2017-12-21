@@ -95,10 +95,9 @@ public class Movement : MonoBehaviour {
 	} 
 
 	private void DisplayOcean (bool[] oceanEnabled) {
-		oceans [0].GetComponent<Renderer> ().enabled = oceanEnabled[0];
-		oceans [1].GetComponent<Renderer> ().enabled = oceanEnabled[1];
-		oceans [2].GetComponent<Renderer> ().enabled = oceanEnabled[2];
-		oceans [3].GetComponent<Renderer> ().enabled = oceanEnabled[3];
+		for (int i = 0; i <= 3; i++) {
+			oceans [i].GetComponent<Renderer> ().enabled = oceanEnabled[i];
+		}
 	}
 
 }

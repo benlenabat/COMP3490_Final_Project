@@ -65,7 +65,7 @@ public class DepthCollision : MonoBehaviour {
     public void fallCheck() //if the player falls to far, resets them
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player.transform.position.y < -10)
+        if (player.transform.position.y < -2)
         {
             Vector3 newPos = new Vector3(0, 2, -2.5f);
             player.transform.position = newPos;
