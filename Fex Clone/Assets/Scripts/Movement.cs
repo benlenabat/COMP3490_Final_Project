@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour {
 	public GameObject[] oceans;
 	private bool[] oceanEnabled = new bool[]{false, false, false, true};
 	private int oceanIndex = 3;
+	public float oceanSpeed;
 
 
 	//--Animation
@@ -76,6 +77,13 @@ public class Movement : MonoBehaviour {
         }
         transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, speedR * Time.deltaTime);
     }
+
+	void Update () {
+		oceans [0].transform.position = Vector3.Lerp (new Vector3 (0, -4, 20), new Vector3(0, -4, -20), Mathf.PingPong(Time.time*oceanSpeed, 1.0f));
+		oceans [1].transform.position = Vector3.Lerp (new Vector3 (-20, -4, 0), new Vector3(20, -4, 0), Mathf.PingPong(Time.time*oceanSpeed, 1.0f));
+		oceans [2].transform.position = Vector3.Lerp (new Vector3 (0, -4, 20), new Vector3(0, -4, -20), Mathf.PingPong(Time.time*oceanSpeed, 1.0f));
+		oceans [3].transform.position = Vector3.Lerp (new Vector3 (-20, -4, 0), new Vector3(20, -4, 0), Mathf.PingPong(Time.time*oceanSpeed, 1.0f));
+	}
 
 	private void ToggleOcean (int indexChange) {
 		oceanEnabled [oceanIndex] = false;
