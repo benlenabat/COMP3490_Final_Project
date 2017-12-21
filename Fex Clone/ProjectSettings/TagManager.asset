@@ -9,6 +9,11 @@ TagManager:
   - Prize
   - PrizeAsset
   - Background
+  - OceanFront
+  - OceanBack
+  - OceanLeft
+  - OceanRight
+  - Ocean
   layers:
   - Default
   - TransparentFX

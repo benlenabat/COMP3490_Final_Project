@@ -9,16 +9,18 @@ public class Jump : MonoBehaviour {
 	public bool isGrounded;
 	private Rigidbody rb;
 	private Animator anim;
+	private AudioSource jumpSound;
 
 	void Start(){
 		rb = GetComponent<Rigidbody>();
 		anim = gameObject.GetComponent<Animator> ();
+		jumpSound = GetComponent<AudioSource> ();
 	}
 
 	void OnCollisionEnter()
 	{
 		isGrounded = true;
-		anim.SetBool ("Ground", isGrounded);
+		anim.SetBool ("Ground", isGrounded); // set animations
 	}
 
 	void Update(){
@@ -27,7 +29,8 @@ public class Jump : MonoBehaviour {
 
 			rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 			isGrounded = false;
-			anim.SetBool ("Ground", false);
+			anim.SetBool ("Ground", false); 
+			jumpSound.Play ();
 		}
 	}
 }
