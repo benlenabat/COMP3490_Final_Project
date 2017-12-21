@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DepthCollision.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TextureWrapManipulation.cs">
     <Files>
-      <File FileName="Assets\Scripts\CamRotation.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Movement.cs" Line="39" Column="20" />
+      <File FileName="Assets\Scripts\Movement.cs" Line="86" Column="3" />
+      <File FileName="Assets\WaveController.cs" Line="17" Column="36" />
       <File FileName="Assets\Scripts\Jump.cs" Line="28" Column="1" />
-      <File FileName="Assets\Scripts\DepthCollision.cs" Line="13" Column="27" />
-      <File FileName="Assets\Scripts\TextureWrapManipulation.cs" Line="9" Column="30" />
+      <File FileName="Assets\Scripts\DepthCollision.cs" Line="73" Column="6" />
+      <File FileName="Assets\Scripts\TextureWrapManipulation.cs" Line="32" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
